@@ -1,4 +1,4 @@
-class FatProxy < Formula
+class MagmaFatProxy < Formula
   desc "Fat Proxy for RoboCup 3D Soccer Simulation"
   homepage "https://github.com/magmaOffenburg/magmaFatProxy"
   url "https://github.com/magmaOffenburg/magmaFatProxy/archive/v1.0.0.tar.gz"
@@ -13,7 +13,7 @@ class FatProxy < Formula
     system "ant", "-f", "magmaFatProxy.xml", "jar"
     libexec.install "jar/magmaFatProxy.jar"
     libexec.install "scripts/start.sh"
-    mv libexec/"start.sh", libexec/"fat-proxy"
-    bin.write_exec_script libexec/"fat-proxy"
+    mv libexec/"start.sh", libexec/"magma-fat-proxy"
+    bin.write_exec_script libexec/"magma-fat-proxy"
   end
 end
