@@ -7,15 +7,16 @@ class MagmaFatProxy < Formula
   head "https://github.com/magmaOffenburg/magmaFatProxy.git"
 
   depends_on "ant" => :build
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
 
   def install
     system "ant", "-f", "magmaFatProxy.xml", "jar"
     libexec.install "jar/magmaFatProxy.jar"
     libexec.install "scripts/start.sh"
     mv libexec/"start.sh", libexec/"magma-fat-proxy"
-    # Workaround to make the start script executable; can be removed as soon as the shebang is added at the right position
-    FileUtils.chmod 0775, libexec/"magma-fat-proxy"
+    # Workaround to make the start script executable
+    # Can be removed as soon as the shebang is added at the right position
+    chmod 0775, libexec/"magma-fat-proxy"
     bin.write_exec_script libexec/"magma-fat-proxy"
   end
 end
