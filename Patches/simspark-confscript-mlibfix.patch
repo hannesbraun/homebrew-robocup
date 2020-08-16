@@ -1,6 +1,5 @@
-diff -up spark/lib/kerosin/kerosin-config.in.mlibfix spark/lib/kerosin/kerosin-config.in
---- spark/lib/kerosin/kerosin-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
-+++ spark/lib/kerosin/kerosin-config.in	2010-08-04 04:29:02.566306185 +0430
+--- a/spark/lib/kerosin/kerosin-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
++++ b/spark/lib/kerosin/kerosin-config.in	2010-08-04 04:29:02.566306185 +0430
 @@ -14,6 +14,7 @@ Options:
   [--libs]
   [--libtool]
@@ -12,7 +11,7 @@ diff -up spark/lib/kerosin/kerosin-config.in.mlibfix spark/lib/kerosin/kerosin-c
 @@ -22,6 +23,16 @@ if test $# -eq 0 ; then
    usage 1 1>&2
  fi
- 
+
 +ARCH=`arch`
 +case $ARCH in
 +  x86_64 | ia64 | s390x)
@@ -46,7 +45,7 @@ diff -up spark/lib/kerosin/kerosin-config.in.mlibfix spark/lib/kerosin/kerosin-c
 - echo -L@libdir@/simspark $libs
 + echo -L$LIBDIR/simspark $libs
  fi
- 
+
  if test "$echo_libtool" = "yes" ; then
 @@ -105,7 +122,7 @@ if test "$echo_libtool" = "yes" ; then
   if test `uname` = "Darwin"; then
@@ -55,11 +54,10 @@ diff -up spark/lib/kerosin/kerosin-config.in.mlibfix spark/lib/kerosin/kerosin-c
 - echo @libdir@/simspark/$convlib
 + echo $LIBDIR/simspark/$convlib
  fi
- 
+
  # EOF
-diff -up spark/lib/oxygen/oxygen-config.in.mlibfix spark/lib/oxygen/oxygen-config.in
---- spark/lib/oxygen/oxygen-config.in.mlibfix	2010-06-08 13:08:59.000000000 +0430
-+++ spark/lib/oxygen/oxygen-config.in	2010-08-04 04:29:09.525209055 +0430
+--- a/spark/lib/oxygen/oxygen-config.in.mlibfix	2010-06-08 13:08:59.000000000 +0430
++++ b/spark/lib/oxygen/oxygen-config.in	2010-08-04 04:29:09.525209055 +0430
 @@ -14,6 +14,7 @@ Options:
   [--libs]
   [--libtool]
@@ -71,7 +69,7 @@ diff -up spark/lib/oxygen/oxygen-config.in.mlibfix spark/lib/oxygen/oxygen-confi
 @@ -22,6 +23,16 @@ if test $# -eq 0 ; then
    usage 1 1>&2
  fi
- 
+
 +ARCH=`arch`
 +case $ARCH in
 +  x86_64 | ia64 | s390x)
@@ -105,7 +103,7 @@ diff -up spark/lib/oxygen/oxygen-config.in.mlibfix spark/lib/oxygen/oxygen-confi
 - echo -L@libdir@/simspark $libs
 + echo -L$LIBDIR/simspark $libs
  fi
- 
+
  if test "$echo_libtool" = "yes" ; then
 @@ -102,7 +119,7 @@ if test "$echo_libtool" = "yes" ; then
   else
@@ -114,11 +112,10 @@ diff -up spark/lib/oxygen/oxygen-config.in.mlibfix spark/lib/oxygen/oxygen-confi
 - echo @libdir@/simspark/$convlib
 + echo $LIBDIR/simspark/$convlib
  fi
- 
+
  # EOF
-diff -up spark/lib/salt/salt-config.in.mlibfix spark/lib/salt/salt-config.in
---- spark/lib/salt/salt-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
-+++ spark/lib/salt/salt-config.in	2010-08-04 04:22:13.525157510 +0430
+--- a/spark/lib/salt/salt-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
++++ b/spark/lib/salt/salt-config.in	2010-08-04 04:22:13.525157510 +0430
 @@ -15,6 +15,7 @@ Options:
   [--libs]
   [--libtool]
@@ -130,7 +127,7 @@ diff -up spark/lib/salt/salt-config.in.mlibfix spark/lib/salt/salt-config.in
 @@ -23,6 +24,16 @@ if test $# -eq 0 ; then
    usage 1 1>&2
  fi
- 
+
 +ARCH=`arch`
 +case $ARCH in
 +  x86_64 | ia64 | s390x)
@@ -164,7 +161,7 @@ diff -up spark/lib/salt/salt-config.in.mlibfix spark/lib/salt/salt-config.in
 - echo -L@libdir@/simspark $libs
 + echo -L$LIBDIR/simspark $libs
  fi
- 
+
  if test "$echo_libtool" = "yes" ; then
 @@ -106,11 +123,11 @@ if test "$echo_libtool" = "yes" ; then
   else
@@ -173,16 +170,15 @@ diff -up spark/lib/salt/salt-config.in.mlibfix spark/lib/salt/salt-config.in
 - echo @libdir@/simspark/$convlib
 + echo $LIBDIR/simspark/$convlib
  fi
- 
+
  if test "$echo_libdir" = "yes" ; then
 - echo @libdir@/simspark
 + echo $LIBDIR/simspark
  fi
- 
+
  # EOF
-diff -up spark/lib/zeitgeist/zeitgeist-config.in.mlibfix spark/lib/zeitgeist/zeitgeist-config.in
---- spark/lib/zeitgeist/zeitgeist-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
-+++ spark/lib/zeitgeist/zeitgeist-config.in	2010-08-04 04:28:56.398341469 +0430
+--- a/spark/lib/zeitgeist/zeitgeist-config.in.mlibfix	2010-06-08 13:09:00.000000000 +0430
++++ b/spark/lib/zeitgeist/zeitgeist-config.in	2010-08-04 04:28:56.398341469 +0430
 @@ -14,6 +14,7 @@ Options:
   [--libs]
   [--libtool]
@@ -194,7 +190,7 @@ diff -up spark/lib/zeitgeist/zeitgeist-config.in.mlibfix spark/lib/zeitgeist/zei
 @@ -22,6 +23,16 @@ if test $# -eq 0 ; then
    usage 1 1>&2
  fi
- 
+
 +ARCH=`arch`
 +case $ARCH in
 +  x86_64 | ia64 | s390x)
@@ -228,7 +224,7 @@ diff -up spark/lib/zeitgeist/zeitgeist-config.in.mlibfix spark/lib/zeitgeist/zei
 - echo -L@libdir@/simspark $libs
 + echo -L$LIBDIR/simspark $libs
  fi
- 
+
  if test "$echo_libtool" = "yes" ; then
 @@ -105,7 +122,7 @@ if test "$echo_libtool" = "yes" ; then
   if test `uname -s` = "Darwin"; then
@@ -237,5 +233,5 @@ diff -up spark/lib/zeitgeist/zeitgeist-config.in.mlibfix spark/lib/zeitgeist/zei
 - echo @libdir@/simspark/$convlib
 + echo $LIBDIR/simspark/$convlib
  fi
- 
+
  # EOF
