@@ -1,0 +1,10 @@
+--- spark/plugin/CMakeLists.txt.orig	2015-09-11 21:33:36.000000000 +0100
++++ spark/plugin/CMakeLists.txt	2019-04-26 19:46:04.047330898 +0100
+@@ -17,7 +17,6 @@
+ add_subdirectory(forceeffector)
+ add_subdirectory(gyrorateperceptor)
+ add_subdirectory(inputsdl)
+-add_subdirectory(inputqt)
+ add_subdirectory(inputwx)
+ add_subdirectory(objimporter)
+ add_subdirectory(odeimps)
