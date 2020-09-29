@@ -1,18 +1,17 @@
 class MagmaFatProxy < Formula
   desc "Fat Proxy for RoboCup 3D Soccer Simulation"
   homepage "https://github.com/magmaOffenburg/magmaFatProxy"
-  url "https://github.com/magmaOffenburg/magmaFatProxy/archive/v1.0.1.tar.gz"
-  sha256 "1dbdc1ae8732f41abafe44d56e3aa4a53575b7b8cb28844849948b62ae7a68e7"
+  url "https://github.com/magmaOffenburg/magmaFatProxy/archive/v1.1.0.tar.gz"
+  sha256 "e785ba80ce3adfef85783dbbb9bdb97303324a3e8ccaa80462793dab70fce4ff"
   license "GPL-3.0"
-  revision 1
   head "https://github.com/magmaOffenburg/magmaFatProxy.git"
 
-  depends_on "ant" => :build
+  depends_on "maven" => :build
   depends_on java: "1.8"
 
   def install
-    system "ant", "-f", "magmaFatProxy.xml", "jar"
-    libexec.install "jar/magmaFatProxy.jar"
+    system "mvn", "package"
+    libexec.install "target/magmaFatProxy-#{version}-jar-with-dependencies.jar"
     libexec.install "scripts/start.sh"
     mv libexec/"start.sh", libexec/"magma-fat-proxy"
     chmod 0775, libexec/"magma-fat-proxy"
