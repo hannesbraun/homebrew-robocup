@@ -8,7 +8,7 @@ class MagmaFatProxy < Formula
   head "https://github.com/magmaOffenburg/magmaFatProxy.git"
 
   depends_on "maven" => :build
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
     system "mvn", "package"

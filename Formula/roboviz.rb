@@ -7,7 +7,7 @@ class Roboviz < Formula
   head "https://github.com/magmaOffenburg/RoboViz.git"
 
   depends_on "gradle" => :build
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
     system "gradle", "shadowJar"
